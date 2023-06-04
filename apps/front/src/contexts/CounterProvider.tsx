@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useMemo, useState } from "react";
+import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
 
 export const CounterValueContext = createContext(undefined);
 export const CounterActionsContext = createContext(undefined);
@@ -14,14 +14,12 @@ export default function CounterProvider({ children }: { children: ReactNode }) {
         setCounter((prev) => prev - 1);
       },
     }),
-    []
+    [],
   );
 
   return (
     <CounterActionsContext.Provider value={actions}>
-      <CounterValueContext.Provider value={counter}>
-        {children}
-      </CounterValueContext.Provider>
+      <CounterValueContext.Provider value={counter}>{children}</CounterValueContext.Provider>
     </CounterActionsContext.Provider>
   );
 }
@@ -29,9 +27,7 @@ export default function CounterProvider({ children }: { children: ReactNode }) {
 export const useCounterValue = () => {
   const value = useContext(CounterValueContext);
   if (value === undefined) {
-    throw new Error(
-      "useCounterValue should be used within CounterValueContext.Provider"
-    );
+    throw new Error('useCounterValue should be used within CounterValueContext.Provider');
   }
   return value;
 };
@@ -39,9 +35,7 @@ export const useCounterValue = () => {
 export const useCounterActions = () => {
   const value = useContext(CounterActionsContext);
   if (value === undefined) {
-    throw new Error(
-      "useCounterActions should be used within CounterActionsContext.Provider"
-    );
+    throw new Error('useCounterActions should be used within CounterActionsContext.Provider');
   }
   return value;
 };

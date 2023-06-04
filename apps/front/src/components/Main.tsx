@@ -1,5 +1,5 @@
-import Buttons from "./Buttons";
-import Value from "./Value";
+import Buttons from './Buttons';
+import Value from './Value';
 
 export default function Main() {
   return (
