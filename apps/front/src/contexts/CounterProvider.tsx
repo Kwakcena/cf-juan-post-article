@@ -3,7 +3,7 @@ import { ReactNode, createContext, useContext, useMemo, useState } from "react";
 export const CounterValueContext = createContext(undefined);
 export const CounterActionsContext = createContext(undefined);
 
-export default function DataProvider({ children }: { children: ReactNode }) {
+export default function CounterProvider({ children }: { children: ReactNode }) {
   const [counter, setCounter] = useState(1);
   const actions = useMemo(
     () => ({
