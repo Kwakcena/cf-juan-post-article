@@ -1,9 +1,9 @@
-import { useCounterActions } from "../contexts/CounterProvider";
+import { useCounterActions } from '../contexts/CounterProvider';
 
 export default function Buttons() {
   const actions = useCounterActions();
 
-  console.log("Buttons");
+  console.log('Buttons');
 
   return (
     <div>
